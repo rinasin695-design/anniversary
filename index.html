@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary Mamma ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #5a1830;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.heart {
+  font-size: 75px;
+  animation: beat 1.2s infinite;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 15px 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  background: #d6336c;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #999;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  margin: 30px auto;
+  padding: 30px 20px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 650px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.flowers {
+  font-size: 45px;
+  margin: 20px;
+}
+
+footer {
+  padding: 30px;
+  font-size: 16px;
+}
+
+.floating {
+  position: fixed;
+  bottom: -50px;
+  font-size: 25px;
+  animation: floatUp 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+@media(max-width:600px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="heart">❤️</div>
+
+  <h1>Happy Anniversary Mamma</h1>
+
+  <p class="subtitle">
+    A little website made especially for this beautiful day ✨
+  </p>
+
+  <button onclick="showMessage()">
+    Open Your Surprise 💌
+  </button>
+
+  <div id="surprise"></div>
+
+</section>
+
+<div class="card">
+  <div class="flowers">🌹 🌸 🌷 🌺 🌹</div>
+
+  <h2>Happy Anniversary ❤️</h2>
+
+  <p>
+    Today is a special day to celebrate the beautiful memories,
+    smiles and moments we have shared.
+  </p>
+
+  <br>
+
+  <p>
+    Thank you for being such an important part of my life.
+    May every coming day bring more happiness, laughter and
+    beautiful memories.
+  </p>
+</div>
+
+<div class="card">
+
+  <h2>✨ Our Memories ✨</h2>
+
+  <p>
+    Every little moment becomes special when it becomes a memory.
+    Here's to all the good times and all the wonderful moments
+    still waiting ahead.
+  </p>
+
+  <div class="flowers">
+    📸 ❤️ 📸 ❤️ 📸
+  </div>
+
+</div>
+
+<footer>
+  Made with ❤️ for Mamma
+  <br><br>
+  🌸 Happy Anniversary 🌸
+</footer>
+
+<script>
+
+function showMessage() {
+  document.getElementById("surprise").innerHTML = `
+    <div class="card">
+      <h2>💖 A Special Message 💖</h2>
+      <p>
+        You are a very special person and today is a perfect
+        reason to celebrate the wonderful memories we share.
+        <br><br>
+        Happy Anniversary, Mamma! 🌹✨
+      </p>
+    </div>
+  `;
+}
+
+function createHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.className = "floating";
+  heart.innerHTML = ["❤️","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 8000);
+}
+
+setInterval(createHeart, 700);
+
+</script>
+
+</body>
+</html>
